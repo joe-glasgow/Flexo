@@ -31,10 +31,13 @@
     <style type="text/css">
         /* Custom style just to aid with the demo */
         body {
-            font-family: "Segoe UI",Helvetica,Tahoma,Arial,Verdana,Sans-Serif;
-            background: #ff9000;
-            color: #222;
-            /*text-shadow: 0px -1px 0px #666;*/
+            font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif;
+            color: #333;
+        }
+
+        a {
+            /*color: #454545;
+            text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);*/
         }
 
         .nav {
@@ -44,28 +47,38 @@
             left: 0;
             width: 100%;
             z-index: 100;
+            background: #1dbffc; /* Old browsers */
+            background: -moz-linear-gradient(top, #1dbffc 0%, #17a3d6 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1dbffc), color-stop(100%,#17a3d6)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #1dbffc 0%,#17a3d6 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #1dbffc 0%,#17a3d6 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #1dbffc 0%,#17a3d6 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #1dbffc 0%,#17a3d6 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1dbffc', endColorstr='#17a3d6',GradientType=0 ); /* IE6-9 */
             color: #fff;
-            background: #333333; /* Old browsers */
-            background: -moz-linear-gradient(top, #333333 0%, #222222 100%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#222222)); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top, #333333 0%,#222222 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top, #333333 0%,#222222 100%); /* Opera 11.10+ */
-            background: -ms-linear-gradient(top, #333333 0%,#222222 100%); /* IE10+ */
-            background: linear-gradient(to bottom, #333333 0%,#222222 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
-            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid #596ab2;
+            text-shadow: 0px -1px 0px #596ab2;
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
         }
 
         .nav-inner {
-            max-width: 1140px;
+            padding: 0 2em;
             margin: 0 auto;
+        }
+
+        @media screen and (min-width: 480px) {
+            .nav-inner {
+                max-width: 1140px;
+                margin: 0 auto;
+                padding: 0;
+            }
         }
 
         .lt-ie9 .nav-inner {
             width: 1140px;
+            padding: 0;
         }
 
         .nav-inner h1 {
@@ -89,18 +102,28 @@
             zoom: 1;
         }
 
-        .row {
+        .well {
             background-color: #EBEBEB;
         }
 
-        [class*=clmn] {
+        .box {
+            padding: 1em;
             background-color: #454545;
             color: #fff;
-            text-shadow: 0px -1px 0px #222;
+            text-shadow: 0px -1px 0px #111;
+        }
+
+        .well, .box {
+            border-radius: 8px;
+            -moz-box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.3);
         }
 
         .container > header {
             padding-top: 83px;
+            font-size: 1.17em;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -112,142 +135,160 @@
     </div>
     <div class="container">
         <header>
+            <div class="row">
+                <div class="clmn4-5">
+                    <h1>Flexo is a responsive grid that helps you build mobile-first websites. 
+                    </h1>
+                </div>
+                <div class="clmn5"></div>
+            </div>
             <p>
-                Flexo is a mobile-first responsive grid designed to give you a helping hand developing responsive sites. 
+                Flexo has been designed with simplicity in mind - A five column grid with a sticky footer that scales up beautifully as you go from mobile to desktop.
             </p>
-            <p>
-                Flexo has been designed with simplicity in mind. A 5 column grid with a sticky footer that scales beautifully up as you go from mobile to desktop
-            </p>
+            <p>Resize the browser to see it adapt.</p>
         </header>
         <h2>Full width</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>2 Column</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>3 Column</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>4 Column</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>5 Column</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>1/5 plus 4/5 column </h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn4-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>2/5 plus 3/5 column </h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn2-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn3-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>1/5 plus 3/5 plus 1/5 column </h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn3-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>2/3 plus 1/3 column </h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn2-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>1/3 plus 2/3 column </h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn2-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>1/4 plus 3/4 column</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn3-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
         <h2>1/4 plus 1/2 plus 1/4 column</h2>
-        <div class="row">
+        <div class="row well">
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
             <div class="clmn4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.  
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus libero, vulputate et sagittis sit amet, egestas at justo. In hac habitasse platea dictumst. Pellentesque sed neque vitae metus lacinia pellentesque eu sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate vulputate tortor, non facilisis dolor porttitor vitae.</div>
             </div>
         </div>
     </div>
+    <footer>
+        <div class="row">
+            <div class="clmn4-5">
+                <p>
+                    &copy; 2012 James South<br />
+                    Licensed under the 
+        <a href="http://www.apache.org/licenses/LICENSE-2.0" rel="external">Apache License, Version 2.0</a>
+                </p>
+            </div>
+            <div class="clmn5">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
