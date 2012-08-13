@@ -69,7 +69,6 @@ body > footer {
 [class*="clmn"] {
     display: block;
     box-sizing: border-box;
-    margin-bottom: 1.5em;
     float: left;
     margin-left: 2%;
     /* Fix ie7 rounding */
