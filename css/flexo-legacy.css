@@ -1,0 +1,147 @@
+﻿/* ==|== Flexo 1.0 ===============================================================
+    Author: James South
+    twitter : http://twitter.com/James_M_South
+    github : https://github.com/JimBobSquarePants/Flexo
+    Copyright (c) 2012,  James South.
+    Licensed under the Apache License v2.0.
+    ============================================================================== */
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    margin-bottom: -150px;
+    padding-bottom: 150px;
+}
+
+body > footer {
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.container, body > footer {
+    box-sizing: border-box;
+    /* Manages width in a single place */
+    width: 1140px;
+}
+
+body > footer {
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contains floats so all columns can float left*/
+.container:before,
+.container:after,
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+}
+
+.container:after,
+.row:after {
+    clear: both;
+}
+
+.container,
+.row {
+    *zoom: 1;
+}
+
+/* =============================================================================
+   Grid
+   ========================================================================== */
+
+[class*="clmn"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 1.5em;
+    float: left;
+    margin-left: 2%;
+    /* Fix ie7 rounding */
+    *margin-right: -1px;
+}
+
+    [class*="clmn"]:first-child {
+        margin-left: 0;
+    }
+
+/* Columns */
+
+/* Full width calculated with margins */
+.clmn1 {
+    width: 100%;
+}
+
+/* 2 column */
+.clmn2 {
+    width: 49%;
+}
+
+/* 3 column */
+.clmn3 {
+    width: 32%;
+}
+
+/* 4 column */
+.clmn4 {
+    width: 23.5%;
+}
+
+/* 5 column */
+.clmn5 {
+    width: 18.4%;
+}
+
+/* Fillers*/
+/* 2/3 column */
+.clmn2-3 {
+    width: 66%;
+}
+/* 3/4 column */
+.clmn3-4 {
+    width: 74.5%;
+}
+
+/* 2/5 column */
+.clmn2-5 {
+    width: 38.8%;
+}
+/* 3/5 column */
+.clmn3-5 {
+    width: 59.2%;
+}
+/* 4/5 column */
+.clmn4-5 {
+    width: 79.6%;
+}
+
+/* ==========================================================================
+   Responsive helpers
+   ========================================================================== */
+
+.visible-phone {
+    display: none;
+}
+
+.visible-tablet {
+    display: none;
+}
+
+.hidden-desktop {
+    display: none;
+}

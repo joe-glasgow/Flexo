@@ -1,0 +1,262 @@
+﻿/* ==|== Flexo 1.0 ===============================================================
+    Author: James South
+    twitter : http://twitter.com/James_M_South
+    github : https://github.com/JimBobSquarePants/Flexo
+    Copyright (c) 2012,  James South.
+    Licensed under the Apache License v2.0.
+    ============================================================================== */
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+html {
+    /*Use the iOS devices hardware accelerator to provide native scrolling*/
+    -webkit-overflow-scrolling: touch;
+    /* Disable iOS/WinMobile font size changes */
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    margin-bottom: -150px;
+    padding-bottom: 150px;
+}
+
+body > footer {
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.container, body > footer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body > footer {
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* =============================================================================
+   Grid
+   ========================================================================== */
+
+[class*="clmn"] {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1.5em;
+}
+
+/* ==|== media queries ===================================================
+Poartrait phone viewport < 480px
+========================================================================== */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 82.5%;
+        /* Add a little padding*/
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+/* ==|== media queries ===================================================
+Landscape phone to small desktop & portrait tablet viewport > 768px
+========================================================================== */
+@media screen and (min-width: 768px) {
+
+    /* =============================================================================
+       Base
+       ========================================================================== */
+    body {
+        font-size: 100%;
+        /* Remove the padding */
+        padding: 0;
+    }
+
+        /* wraps around all content */
+        .container,
+        body > footer {
+            /* Manages width in a single place */
+            max-width: 1140px;
+        }
+
+            /* Contains floats so all columns can float left*/
+            .container:before,
+            .container:after,
+            .row:before,
+            .row:after {
+                content: "";
+                display: table;
+            }
+
+            .container:after,
+            .row:after {
+                clear: both;
+            }
+
+    .container,
+    .row {
+        *zoom: 1;
+    }
+
+    /* =============================================================================
+       Grid
+       ========================================================================== */
+    /* Float to create grid */
+    [class*="clmn"] {
+        float: left;
+        margin-left: 2%;
+    }
+
+        [class*="clmn"]:first-child {
+            margin-left: 0;
+        }
+
+    /* Columns */
+
+    /* Full width calculated with margins */
+    .clmn1 {
+        width: 100%;
+    }
+
+    /* 2 column */
+    .clmn2 {
+        width: 49%;
+    }
+
+    /* 3 column */
+    .clmn3 {
+        width: 32%;
+    }
+
+    /* 4 column */
+    .clmn4 {
+        width: 23.5%;
+    }
+
+    /* 5 column */
+    .clmn5 {
+        width: 18.4%;
+    }
+
+    /* Fillers*/
+    /* 2/3 column */
+    .clmn2-3 {
+        width: 66%;
+    }
+    /* 3/4 column */
+    .clmn3-4 {
+        width: 74.5%;
+    }
+
+    /* 2/5 column */
+    .clmn2-5 {
+        width: 38.8%;
+    }
+    /* 3/5 column */
+    .clmn3-5 {
+        width: 59.2%;
+    }
+    /* 4/5 column */
+    .clmn4-5 {
+        width: 79.6%;
+    }
+}
+
+/* ==========================================================================
+   Responsive helpers
+   ========================================================================== */
+
+.visible-phone {
+    display: none;
+}
+
+.visible-tablet {
+    display: none;
+}
+
+.hidden-desktop {
+    display: none;
+}
+
+/* ==|== media queries ======================================================
+   Up to landscape phone: viewport < 480px
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+
+    /* visibility */
+    .visible-desktop {
+        display: none;
+    }
+
+    .visible-tablet {
+        display: none;
+    }
+
+    .visible-phone {
+        display: inherit;
+    }
+}
+
+/* ==|== media queries ===================================================
+Landscape phone to small desktop & portrait tablet viewport < 768px
+========================================================================== */
+@media screen and (max-width: 767px) {
+
+    /* visibility */
+    .visible-phone {
+        display: inherit;
+    }
+
+    .hidden-phone {
+        display: none;
+    }
+
+    .hidden-desktop {
+        display: inherit;
+    }
+
+    .visible-desktop {
+        display: none;
+    }
+}
+
+/* ==|== media queries ======================================================
+   Landscape tablet to default desktop: 769 > viewport < 980px
+   ========================================================================== */
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    /* visibility */
+    .visible-tablet {
+        display: inherit;
+    }
+
+    .hidden-tablet {
+        display: none;
+    }
+
+    .hidden-desktop {
+        display: inherit;
+    }
+
+    .visible-desktop {
+        display: none;
+    }
+}
