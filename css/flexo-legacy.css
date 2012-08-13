@@ -71,6 +71,7 @@ body > footer {
     box-sizing: border-box;
     float: left;
     margin-left: 2%;
+    min-height: 1px;
     /* Fix ie7 rounding */
     *margin-right: -1px;
 }
