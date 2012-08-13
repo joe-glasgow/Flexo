@@ -74,6 +74,10 @@
                 margin: 0 auto;
                 padding: 0;
             }
+
+            .tweet {
+                margin-top: 2em;
+            }
         }
 
         .lt-ie9 .nav-inner {
@@ -84,6 +88,14 @@
         .nav-inner h1 {
             margin-top: .34em;
             margin-bottom: .34em;
+        }
+
+        .fork {
+            position: fixed;
+            z-index: 101;
+            top: 0;
+            right: 0;
+            border: 0;
         }
 
         .flexo {
@@ -128,6 +140,9 @@
     </style>
 </head>
 <body>
+    <a class="fork" href="https://github.com/JimBobSquarePants/Flexo">
+        <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub">
+    </a>
     <div class="nav">
         <div class="nav-inner">
             <h1><span class="flexo"></span>Flexo</h1>
@@ -141,8 +156,10 @@
                     </h1>
                 </div>
                 <div class="clmn5">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jimbobsquarepants.github.com/Flexo/" data-via="james_m_south" data-size="large" data-hashtags="flexo">Tweet</a>
-                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+                    <div class="tweet">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jimbobsquarepants.github.com/Flexo/" data-via="james_m_south" data-size="large" data-hashtags="flexo">Tweet</a>
+                        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+                    </div>
                 </div>
             </div>
             <p>
