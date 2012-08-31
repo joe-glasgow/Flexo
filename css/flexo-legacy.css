@@ -172,18 +172,3 @@ html, body {
     width: 81.6%;
 }
 
-/* ==========================================================================
-   Responsive helpers
-   ========================================================================== */
-
-.visible-phone {
-    display: none;
-}
-
-.visible-tablet {
-    display: none;
-}
-
-.hidden-desktop {
-    display: none;
-}
